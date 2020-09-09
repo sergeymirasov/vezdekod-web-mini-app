@@ -1,18 +1,16 @@
 {
-  "name": "kozodoi-club-hack",
+  "name": "vezdekod-web-mini-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Вездекод | Хакатон ВКонтакте - Веб (Хотфикс)",
   "main": "index.js",
   "homepage": "http://sergeymirasov.github.io/vezdekod-web-mini-app",
   "scripts": {
     "start": "cross-env PORT=10888 react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "surge-deploy": "npm run build && surge ./build --domain kozodoi-club-hack.surge.sh"
+    "deploy": "gh-pages -d build"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Sergey Mirasov",
   "license": "MIT",
   "devDependencies": {
     "cross-env": "^5.2.0",
