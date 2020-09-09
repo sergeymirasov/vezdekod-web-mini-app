@@ -26,6 +26,16 @@ const Place = ({ item, order, onIncrementPosition, onDecrementPosition, area }) 
     return accounting.formatNumber(result, 0, ' ');
   }, [ order, item ]);
 
+  const orderDisabled = price <= 0;
+
+  // preventDefault используется по причине того что pointer-events не позволяет задать кастомный
+  // курсоры
+  const handleOrderClick = (event) => {
+    if (orderDisabled) return event.preventDefault();
+
+    return;
+  }
+
   return (
     <div className="Place">
       <header className="Place__header">
@@ -101,7 +111,13 @@ const Place = ({ item, order, onIncrementPosition, onDecrementPosition, area }) 
         )))}
       </ul>
       <footer className="Place__footer">
-        <Link to={`/basket/${area.id}/${item.id}`} className="Place__order">
+        {/* Чередуем аттрибут disabled и класс Place__order_disabled для лучшей кроссбраузерности */}
+        <Link
+          to={`/basket/${area.id}/${item.id}`}
+          className={`Place__order ${orderDisabled ? 'Place__order_disabled' : ''}`}
+          disabled={orderDisabled}
+          onClick={handleOrderClick}
+        >
           Оформить заказ ({price})
         </Link>
       </footer>
