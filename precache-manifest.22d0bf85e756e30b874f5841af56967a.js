@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8d9ddeb0332cb67f84cd1a2ea2da65de",
+    "revision": "f522a405df04ada6201c089e291ff5d4",
     "url": "/vezdekod-web-mini-app/index.html"
   },
   {
-    "revision": "010ac615897b4bb52d04",
+    "revision": "503634541ef117561064",
     "url": "/vezdekod-web-mini-app/static/css/main.24a2169f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vezdekod-web-mini-app/static/js/2.938fedf1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "010ac615897b4bb52d04",
-    "url": "/vezdekod-web-mini-app/static/js/main.5cb2c966.chunk.js"
+    "revision": "503634541ef117561064",
+    "url": "/vezdekod-web-mini-app/static/js/main.5b42825d.chunk.js"
   },
   {
     "revision": "1f0de3f823c2835fd946",

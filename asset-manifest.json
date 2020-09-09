@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/vezdekod-web-mini-app/static/css/main.24a2169f.chunk.css",
-    "main.js": "/vezdekod-web-mini-app/static/js/main.5cb2c966.chunk.js",
-    "main.js.map": "/vezdekod-web-mini-app/static/js/main.5cb2c966.chunk.js.map",
+    "main.js": "/vezdekod-web-mini-app/static/js/main.5b42825d.chunk.js",
+    "main.js.map": "/vezdekod-web-mini-app/static/js/main.5b42825d.chunk.js.map",
     "runtime-main.js": "/vezdekod-web-mini-app/static/js/runtime-main.df4545d2.js",
     "runtime-main.js.map": "/vezdekod-web-mini-app/static/js/runtime-main.df4545d2.js.map",
     "static/js/2.938fedf1.chunk.js": "/vezdekod-web-mini-app/static/js/2.938fedf1.chunk.js",
     "static/js/2.938fedf1.chunk.js.map": "/vezdekod-web-mini-app/static/js/2.938fedf1.chunk.js.map",
     "index.html": "/vezdekod-web-mini-app/index.html",
-    "precache-manifest.390fb11d2105b454c4f3ecfbb685b8a6.js": "/vezdekod-web-mini-app/precache-manifest.390fb11d2105b454c4f3ecfbb685b8a6.js",
+    "precache-manifest.22d0bf85e756e30b874f5841af56967a.js": "/vezdekod-web-mini-app/precache-manifest.22d0bf85e756e30b874f5841af56967a.js",
     "service-worker.js": "/vezdekod-web-mini-app/service-worker.js",
     "static/css/main.24a2169f.chunk.css.map": "/vezdekod-web-mini-app/static/css/main.24a2169f.chunk.css.map",
     "static/js/2.938fedf1.chunk.js.LICENSE.txt": "/vezdekod-web-mini-app/static/js/2.938fedf1.chunk.js.LICENSE.txt",
@@ -28,6 +28,6 @@
     "static/js/runtime-main.df4545d2.js",
     "static/js/2.938fedf1.chunk.js",
     "static/css/main.24a2169f.chunk.css",
-    "static/js/main.5cb2c966.chunk.js"
+    "static/js/main.5b42825d.chunk.js"
   ]
 }
