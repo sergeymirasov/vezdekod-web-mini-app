@@ -140,7 +140,7 @@ const App = () => {
 	const [ orderParams, setOrderParams ] = useState(JSON.parse((localStorage.getItem('orderParams') || 'null')) || {});
 
 	return (
-		<Router>
+		<Router basename="/vezdekod-web-mini-app">
 			<Switch>
 				<Route path="/" exact>
 					<Home foodAreas={FOOD_AREAS} order={order} />
