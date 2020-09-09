@@ -17,6 +17,14 @@ import TwoTowar from './img/2.png';
 import ThreeTowar from './img/3.png';
 import FourTowar from './img/4.png';
 
+/**
+ * Есть 2 способа исправить баг с неправильной ценой у "Картофеля фри":
+ *
+ * 1. Изменить "id" в FOOD_AREAS у KFC с bigmac на fries (или любой другой, но уникальный)
+ *
+ * 2. Изменить логику формирования "foodsMap", где в качестве id будет название ресторана и название заказа,
+ * это обеспечит уникальность "id" и защитит нас от проблем с случайными опечатками
+ */
 
 const FOOD_AREAS = [{
 	id: 'pizikiva-gallery',
@@ -33,7 +41,8 @@ const FOOD_AREAS = [{
 			name: 'Классик',
 			price: 150,
 		}, {
-			id: 'fries',
+			// id: 'fries',
+			id: 'bigmac',
 			image: OneTowar,
 			name: 'Картофель фри',
 			price: 50,
@@ -117,7 +126,8 @@ const placesMap = FOOD_AREAS.reduce((result, area) => {
 const foodsMap = FOOD_AREAS.reduce((result, area) => {
 	area.items.forEach(item => {
 		item.foods.forEach(food => {
-			result[food.id] = food;
+			// result[food.id] = food;
+			result[`${item.id}-${food.id}`] = food;
 		});
 	});
 
@@ -196,7 +206,8 @@ const App = () => {
 										updatedOrder[id].count++;
 									} else {
 										updatedOrder[id] = {
-											item: foodsMap[id],
+											// item: foodsMap[id],
+											item: foodsMap[`${itemId}-${id}`],
 											count: 1,
 										};
 									}
