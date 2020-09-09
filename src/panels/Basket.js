@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import accounting from 'accounting';
 
@@ -8,10 +8,10 @@ import edit from '../img/edit.svg';
 import './place.css';
 
 
-const Basket = ({ match: { params: { areaId, itemId }}, foodAreas, order }) => {
-  const [ faster, setFaster ] = useState(true);
-  const [ time, setTime ] = useState('');
-  const [ selfService, setSelfService ] = useState(false);
+const Basket = ({ match: { params: { areaId, itemId }}, foodAreas, order, orderParams, setFaster, setTime, setSelfService }) => {
+  const initialOrderParams = { faster: true, time: '', selfService: false };
+  const { faster, time, selfService } = orderParams[itemId] || initialOrderParams;
+
   const area = foodAreas.filter(area => area.id === areaId)[0];
   const item = area.items.filter(item => item.id === itemId)[0];
 
@@ -111,10 +111,10 @@ const Basket = ({ match: { params: { areaId, itemId }}, foodAreas, order }) => {
             checked={faster} 
             onToggle={() => {
               if (faster) {
-                setFaster(false);
+                setFaster({ id: itemId, faster: false });
               } else {
-                setTime('');
-                setFaster(true);
+                setTime({ id: itemId, time: '' });
+                setFaster({ id: itemId, faster: true });
               }
             }}
           />
@@ -125,26 +125,26 @@ const Basket = ({ match: { params: { areaId, itemId }}, foodAreas, order }) => {
             type="time"
             value={time}
             onFocus={() => {
-              setFaster(false);
+              setFaster({ id: itemId, faster: false });
             }}
             onChange={event => {
-              setFaster(false);
-              setTime(event.target.value);
+              setFaster({ id: itemId, faster: false });
+              setTime({ id: itemId, time: event.target.value });
             }}
             onBlur={() => {
               if (time) {
-                setFaster(false);
+                setFaster({ id: itemId, faster: false });
               }
             }}
           />
         </div>
         <div className="Place__choice-item">
           <h3>С собой</h3>
-          <Checkbox checked={selfService} onToggle={() => setSelfService(!selfService)} />
+          <Checkbox checked={selfService} onToggle={() => setSelfService({ id: itemId , selfService: !selfService })} />
         </div>
         <div className="Place__choice-item">
           <h3>На месте</h3>
-          <Checkbox checked={!selfService} onToggle={() => setSelfService(!setSelfService)} />
+          <Checkbox checked={!selfService} onToggle={() => setSelfService({ id: itemId , selfService: !selfService })} />
         </div>
       </div>
       <footer className="Place__footer">

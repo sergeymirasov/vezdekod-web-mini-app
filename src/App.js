@@ -137,6 +137,7 @@ const foodsMap = FOOD_AREAS.reduce((result, area) => {
 const App = () => {
 	const [ orderStatuses, setOrderStatuses ] = useState(JSON.parse((localStorage.getItem('orderStatuses') || 'null')) || {});
 	const [ order, setOrder ] = useState(JSON.parse((localStorage.getItem('orders') || 'null')) || {});
+	const [ orderParams, setOrderParams ] = useState(JSON.parse((localStorage.getItem('orderParams') || 'null')) || {});
 
 	return (
 		<Router>
@@ -162,6 +163,34 @@ const App = () => {
 					<Basket
 						foodAreas={FOOD_AREAS}
 						order={order}
+						orderParams={orderParams}
+						setFaster={({ id, faster }) => {
+							const updatedOrderParams = {
+								...orderParams,
+								[id]: { ...orderParams[id], faster }
+							};
+
+							setOrderParams(updatedOrderParams);
+							localStorage.setItem('orderParams', JSON.stringify(updatedOrderParams));
+						}}
+						setTime={({ id, time }) => {
+							const updatedOrderParams = {
+								...orderParams,
+								[id]: { ...orderParams[id], time }
+							};
+
+							setOrderParams(updatedOrderParams);
+							localStorage.setItem('orderParams', JSON.stringify(updatedOrderParams));
+						}}
+						setSelfService={({ id, selfService }) => {
+							const updatedOrderParams = {
+								...orderParams,
+								[id]: { ...orderParams[id], selfService }
+							};
+
+							setOrderParams(updatedOrderParams);
+							localStorage.setItem('orderParams', JSON.stringify(updatedOrderParams));
+						}}
 					/>
 				</Route>
 				<Route
