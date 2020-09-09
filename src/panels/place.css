@@ -168,8 +168,8 @@
 /* Чередуем аттрибут disabled и класс Place__order_disabled для лучшей кроссбраузерности */
 .Place__order[disabled],
 .Place__order_disabled {
-  color: #000;
-  background-color: #e6e6e6;
+  /* color: #000; */
+  /* background-color: #e6e6e6; */
   cursor: not-allowed;
 }
 
